@@ -9,12 +9,19 @@ it will resize the image and add corner tag.
 |------------|-------------|
 | <img src="https://github.com/RHEMS-Japan/iconmaker/blob/master/workdir/RHEMS.png?raw=true)" width="250"> | <img src="https://github.com/RHEMS-Japan/iconmaker/blob/master/workdir/tmp/RHEMS-iconmaker.png?raw=true)" width="128"> |
 
+#### wath do you need?
+docker
+
+#### tips
+make your original image with square
+
 
 ### installer
 
 ```terminal
 [terminal]# curl https://****/install.sh | bash
 ```
+
 
 ### how to use
 
@@ -26,6 +33,7 @@ it will resize the image and add corner tag.
 
 https://hub.docker.com/repository/docker/rhemsjapan/iconmaker
 
+<br><br><br>
 ### run
 
 ```sh
