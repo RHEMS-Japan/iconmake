@@ -1,0 +1,16 @@
+#!/bin/bash
+
+_TMP=$(PWD)/.tmp_iconmaker
+_TAG=$1
+_IMAGE=`basename $2`
+
+rm -Rf ${_TMP}
+mkdir -p ${_TMP}
+
+cp -ip $2 ${_TMP}
+
+docker run --rm -v ${_TMP}:/root/tmp-dir --env TAG=${_TAG} --env IMG=${_IMAGE} rhemsjapan/iconmaker:latest
+
+mv -f ${_TMP}/`echo ${_IMAGE} | cut -d '.' -f 1`-iconmaker.png ./
+
+rm -Rf ${_TMP}
