@@ -4,6 +4,8 @@ From dpokidov/imagemagick:latest
 WORKDIR /root
 
 COPY red-corner.png ./
+COPY blue-corner.png ./
+COPY rhems-corner.png ./
 COPY omaner.ttf ./
 COPY run.sh ./
 RUN chmod +x ./run.sh
