@@ -19,6 +19,9 @@ if [ ${_sealname} = "rhems-bar.png" ]; then
 
     echo "## create bar"
     convert -pointsize 15 -gravity East -font ./omaner.ttf  ${_sealname} ${_bar}
+    
+    echo "## change to 128x128"
+    convert ${_bar} -gravity center -extent 128x128 ${_bar}-resize.png
 
     echo "## change org image to fit"
     convert -resize 119x119! ${_org_image} ${_imgname}-fit.png
@@ -30,7 +33,7 @@ if [ ${_sealname} = "rhems-bar.png" ]; then
     convert ${_imgname}-resize.png -shave 3x3 -bordercolor "#ff0000" -border 3 ${_imgname}-frame.png
 
     echo "## add bar"
-    convert ${_imgname}-frame.png ${_bar} -gravity  South -compose over -composite `echo ${_imgname} | cut -d '.' -f 1`-iconmaker.png
+    convert ${_imgname}-frame.png ${_bar}-resize.png -gravity  South -compose over -composite `echo ${_imgname} | cut -d '.' -f 1`-iconmaker.png
 
     mv -i `echo ${_imgname} | cut -d '.' -f 1`-iconmaker.png ${_tmp_dir}
 
