@@ -13,12 +13,12 @@ _sealname=${SLN}
 
 
 
-if [ ${SRN} = "rhems-bar.png" ]; then
+if [ ${_sealname} = "rhems-bar.png" ]; then
     ## create tmp dir
     mkdir -p ${_tmp_dir}
 
     echo "## create bar"
-    convert -pointsize 15 -gravity East -font ./omaner.ttf  rhems-bar.png corner.png
+    convert -pointsize 15 -gravity East -font ./omaner.ttf  ${_sealname} ${_bar}
 
     echo "## change org image to fit"
     convert -resize 119x119! ${_org_image} ${_imgname}-fit.png
@@ -40,7 +40,7 @@ else
     mkdir -p ${_tmp_dir}
 
     echo "## create corner"
-    convert -pointsize 15 -gravity East -font ./omaner.ttf -fill white -annotate 48x45+7x25 "${_tag_name}" ${_cornername} ${_corner}
+    convert -pointsize 15 -gravity East -font ./omaner.ttf -fill white -annotate 48x45+7x25 "${_tag_name}" ${_sealname} ${_corner}
     #convert -pointsize 15 -gravity East -font ./omaner.ttf -annotate 48x45+7x25 "PRD" red-corner.png ${_corner}
 
     echo "## change org image to fit"
