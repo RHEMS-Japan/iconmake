@@ -5,7 +5,7 @@ WORKDIR /root
 
 COPY red-corner.png ./
 COPY blue-corner.png ./
-COPY rhems-corner.png ./
+COPY rhems-bar.png ./
 COPY omaner.ttf ./
 COPY run.sh ./
 RUN chmod +x ./run.sh
