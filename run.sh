@@ -5,6 +5,7 @@ _tmp_dir=/root/tmp-dir
 _tag_name=${TAG}
 _imgname=${IMG}
 _org_image=${_tmp_dir}/${_imgname}
+_corner=corner.png
 _cornername=${CRN}
 
 
