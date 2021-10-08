@@ -1,4 +1,4 @@
-From dpokidov/imagemagick:develop
+From dpokidov/imagemagick:latest
 
 #RUN convert -version
 WORKDIR /root
