@@ -21,7 +21,7 @@ if [ ${_sealname} = "rhems-bar.png" ]; then
     convert -pointsize 15 -gravity East -font ./omaner.ttf  ${_sealname} ${_bar}
     
     echo "## change to 128x128"
-    convert ${_bar} -gravity center -extent 128x128 ${_bar}-resize.png
+    convert ${_bar} -resize 128x128 ${_bar}-resize.png
 
     echo "## change org image to fit"
     convert -resize 119x119! ${_org_image} ${_imgname}-fit.png
