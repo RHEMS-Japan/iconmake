@@ -41,9 +41,14 @@ else
     mkdir -p ${_tmp_dir}
 
     echo "## create corner"
+    if [ ${#_tag_name} -lt 4 ]; then
     convert -pointsize 15 -gravity East -font ./omaner.ttf -fill white -annotate 48x45+7x25 "${_tag_name}" ${_sealname} ${_corner}
-    #convert -pointsize 15 -gravity East -font ./omaner.ttf -annotate 48x45+7x25 "PRD" red-corner.png ${_corner}
-
+    elif [ ${#_tag_name} -lt 6 ]; then
+    convert -pointsize 9 -gravity East -font ./omaner.ttf -fill white -annotate 48x45+7x25 "${_tag_name}" ${_sealname} ${_corner}
+    else
+    convert -pointsize 5 -gravity East -font ./omaner.ttf -fill white -annotate 48x45+7x25 "${_tag_name}" ${_sealname} ${_corner}
+    fi
+    
     echo "## change org image to fit"
     convert -resize 119x119! ${_org_image} ${_imgname}-fit.png
 
