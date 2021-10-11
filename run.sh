@@ -17,11 +17,9 @@ if [ ${_sealname} = "rhems-bar.png" ]; then
     ## create tmp dir
     mkdir -p ${_tmp_dir}
 
-    echo "## create bar"
-    convert -pointsize 15 -gravity East -font ./omaner.ttf  ${_sealname} ${_bar}
     
     echo "## change to 128x128"
-    convert ${_bar} -resize 128x128 ${_bar}-resize.png
+    convert ${_sealname} -resize 128x128 ${_bar}-resize.png
 
     echo "## change org image to fit"
     convert -resize 105x105! ${_org_image} ${_imgname}-fit.png
