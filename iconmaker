@@ -8,9 +8,9 @@ function usage {
   cat <<EOM
 Usage: ${iconmaker} [OPTION]...
   -h            Display help
-  -t VALUE      Put text to annotate
   -i VALUE      Select image
-  -s VALUE      Select seal
+  -t VALUE      Put text to annotate
+
 EOM
 
   exit 
