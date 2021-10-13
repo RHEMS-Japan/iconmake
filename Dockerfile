@@ -3,9 +3,7 @@ From dpokidov/imagemagick:latest
 #RUN convert -version
 WORKDIR /root
 
-COPY red-corner.png ./
-COPY blue-corner.png ./
-COPY rhems-bar.png ./
+COPY seal/* ./
 COPY omaner.ttf ./
 COPY run.sh ./
 RUN chmod +x ./run.sh
