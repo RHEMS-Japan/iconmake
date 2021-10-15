@@ -33,13 +33,11 @@ while getopts ":t:i:h" opt; do
   esac
 done
 
-echo -e "input seal type:"
-ls -1 seal/* | xargs -I{} basename {} .png
+echo -e "input seal type:" \\nred-corner \\nblue-corner \\nyellow-corner \\nrhems-bar
 read s 
 rm -Rf ${_TMP}
 mkdir -p ${_TMP}
 cp -ip $i ${_TMP}
-cp -ip seal/$s.png ${_TMP} 
 docker run --rm -v ${_TMP}:/root/tmp-dir --env TAG=$t --env IMG=$i --env SLN=$s.png rhemsjapan/iconmaker:develop
 mv -f ${_TMP}/`echo $i | cut -d '.' -f 1`-iconmaker.png ./
 rm -Rf ${_TMP}
