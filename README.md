@@ -21,7 +21,7 @@ docker
 
 pll the image
 ```
-docker pull rhemsjapan/iconmaker:develop
+docker pull rhemsjapan/iconmaker:latest
 ```
 
 #### tips
