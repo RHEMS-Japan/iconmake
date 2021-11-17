@@ -14,7 +14,7 @@ You can select the type of seal from the following.
 
 |red-corner | blue-corner |yellow-corner |rhems-bar |
 |------------|-------------|------------|-------------|
-|<img src="https://github.com/RHEMS-Japan/iconmaker/blob/develop/seal/red-corner.png?raw=true)" width="128">|<img src="https://github.com/RHEMS-Japan/iconmaker/blob/develop/seal/blue-corner.png?raw=true)" width="128">|<img src="https://github.com/RHEMS-Japan/iconmaker/blob/develop/seal/yellow-corner.png?raw=true)" width="128">|<img src="https://github.com/RHEMS-Japan/iconmaker/blob/develop/seal/rhems-bar.png?raw=true)" width="128">
+|<img src="https://github.com/RHEMS-Japan/iconmaker/blob/master/seal/red-corner.png?raw=true)" width="128">|<img src="https://github.com/RHEMS-Japan/iconmaker/blob/master/seal/blue-corner.png?raw=true)" width="128">|<img src="https://github.com/RHEMS-Japan/iconmaker/blob/master/seal/yellow-corner.png?raw=true)" width="128">|<img src="https://github.com/RHEMS-Japan/iconmaker/blob/master/seal/rhems-bar.png?raw=true)" width="128">
 
 #### wath do you need?
 docker
@@ -57,5 +57,5 @@ https://hub.docker.com/repository/docker/rhemsjapan/iconmaker
 ### run
 
 ```sh
-docker run --rm -v ${_TMP}:/root/tmp-dir --env TAG=$t --env IMG=$i --env SLN=$s.png rhemsjapan/iconmaker:develop
+docker run --rm -v ${_TMP}:/root/tmp-dir --env TAG=$t --env IMG=$i --env SLN=$s.png rhemsjapan/iconmaker:latest
 ```
