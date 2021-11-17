@@ -1,16 +1,43 @@
 #!/bin/bash
 
+iconmaker=$(basename $0)
 _TMP=$(PWD)/.tmp_iconmaker
-_TAG=$1
-_IMAGE=`basename $2`
 
+
+function usage {
+  cat <<EOM
+Usage: ${iconmaker} [OPTION]...
+  -h            Display help
+  -i VALUE      Select image
+  -t VALUE      Put text to annotate
+
+EOM
+
+  exit 
+}
+
+
+
+while getopts ":t:i:h" opt; do
+  case "$opt" in
+    t)
+      t="$OPTARG"
+      ;;
+    i)
+      i="$OPTARG"
+      ;;
+
+    '-h'|'--help'|* )
+      usage
+      ;;
+  esac
+done
+
+echo -e "input seal type:" \\nred-corner \\nblue-corner \\nyellow-corner \\nrhems-bar
+read s 
 rm -Rf ${_TMP}
 mkdir -p ${_TMP}
-
-cp -ip $2 ${_TMP}
-
-docker run --rm -v ${_TMP}:/root/tmp-dir --env TAG=${_TAG} --env IMG=${_IMAGE} rhemsjapan/iconmaker:latest
-
-mv -f ${_TMP}/`echo ${_IMAGE} | cut -d '.' -f 1`-iconmaker.png ./
-
+cp -ip $i ${_TMP}
+docker run --rm -v ${_TMP}:/root/tmp-dir --env TAG=$t --env IMG=$i --env SLN=$s.png rhemsjapan/iconmaker:develop
+mv -f ${_TMP}/`echo $i | cut -d '.' -f 1`-iconmaker.png ./
 rm -Rf ${_TMP}
