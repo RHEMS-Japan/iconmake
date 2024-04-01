@@ -33,7 +33,7 @@ while getopts ":t:i:h" opt; do
   esac
 done
 
-echo -e "input seal type:" \\nred-corner \\nblue-corner \\nyellow-corner \\nrhems-bar
+echo -e "input seal type:" \\nred-corner \\nblue-corner \\nyellow-corner \\nno-corner  \\ntest-corner \\nrhems-bar
 read s 
 rm -Rf ${_TMP}
 mkdir -p ${_TMP}
